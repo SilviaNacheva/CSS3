@@ -1,0 +1,101 @@
+body {
+    background-color: dodgerblue;
+}
+
+.box {
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    transition: width 3s, background-color 6s;
+    transition-timing-function: linear;
+    transition-delay: 2s;
+}
+
+.box:hover {
+    width: 100%;
+    background-color: yellow;
+}
+
+.box1 {
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    transition: transform 3s;
+
+}
+
+.box1:hover {
+    transform: translate(50px, 100px);
+}
+
+.outer-box {
+    position: relative;
+    perspective: 300px;
+    width: 400px;
+    height: 400px;
+    border: 2px solid black;
+    margin: auto;
+    background-color: black;
+    perspective-origin: left;
+}
+
+.box2 {
+    position: absolute;
+    background-color: aquamarine;
+    width: 400px;
+    height: 400px;
+    /*margin: auto;*/
+    /*margin-top: 100px;*/
+    transition: transform 5s;
+    /*transform: rotateX(150deg);*/
+    /*transform: rotateY(150deg);*/
+    /*transform: rotateZ(150deg);*/
+    transform-style: preserve-3d;
+    transform: rotateX(45deg);
+}
+
+@keyframes demoAnimation {
+    /*from {*/
+        /*background-color: white;*/
+    /*}*/
+    /*to {*/
+        /*background-color: yellow;*/
+    /*}*/
+
+    0% {
+        background-color: white;
+        left: 0;
+        top: 0;
+    }
+    25% {
+        background-color: yellow;
+        left: 400px;
+        top: 0;
+    }
+    50% {
+        background-color: red;
+        left: 400px;
+        top: 400px;
+    }
+    75% {
+        background-color: blue;
+        left: 0;
+        top: 400px;
+    }
+    100% {
+        background-color: white;
+        left: 0;
+        top: 0;
+    }
+}
+
+.boxAnim {
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    position: relative;
+
+    animation-name: demoAnimation;
+    animation-duration: 8s;
+}
+
